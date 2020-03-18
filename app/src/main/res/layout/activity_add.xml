@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#CCCCCC"
+        android:padding="10dp"
+        android:id="@+id/LL"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/add_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_clear_black_24dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="30sp"
+            android:text="ICT 융합 프로젝트"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="음식 이름 : "
+                android:textSize="20sp"/>
+            <EditText
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="제목"
+                android:textSize="20sp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/condiment0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="조미료1 양 : "
+                android:textSize="20sp"/>
+            <EditText
+                android:id="@+id/gram0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:inputType="number"
+                android:hint="그램 수"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/condiment1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="조미료2 양 : "
+                android:textSize="20sp"/>
+            <EditText
+                android:id="@+id/gram1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:inputType="number"
+                android:hint="그램 수"
+                />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/bt_sumbit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="확인"/>
+
+    </LinearLayout>
+</LinearLayout>

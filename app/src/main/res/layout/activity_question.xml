@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#CCCCCC"
+        android:padding="10dp"
+        android:id="@+id/LL"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/ques_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_clear_black_24dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="30sp"
+            android:text="ICT 융합 프로젝트"/>
+
+        </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="500dp"
+                android:layout_gravity="center"
+                android:src="@drawable/help"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:text="1. 사용하실 조미료의 이름을 정해줍니다."
+                android:layout_marginBottom="50dp"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="500dp"
+                android:layout_gravity="center"
+                android:src="@drawable/help"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:text="2. 우측 하단의 적색 버튼을 눌러 레시피를 추가 할 수 있습니다."
+                android:layout_marginBottom="50dp"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="500dp"
+                android:layout_gravity="center"
+                android:src="@drawable/help"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:text="3. 레시피의 조미료 양을 작성해주고 확인을 클릭합니다."
+                android:layout_marginBottom="50dp"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="500dp"
+                android:src="@drawable/help"
+                android:layout_gravity="center" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:text="4. 해당 레시피를 짧게 클릭 시 실행하게되고, \n 길게 클릭 시 삭제가 가능합니다."
+                android:layout_marginBottom="50dp"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="500dp"
+                android:src="@drawable/help"
+                android:layout_gravity="center" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:text="5. 조미료의 수정을 원할 시 \n 조미료 변경을 클릭 합니다."/>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>
