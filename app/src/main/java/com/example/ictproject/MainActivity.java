@@ -94,15 +94,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setMessage("정말로 종료하시겠습니까?");
-                builder.setTitle("알림")
+                builder.setTitle("알림창")
                         .setCancelable(false)
-                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        .setPositiveButton("예", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int i) {
                                 finish();
                             }
                         })
-                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        .setNegativeButton("아니오", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int i) {
                                 dialog.cancel();
@@ -172,14 +172,26 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(MainActivity.this, AddActivity.class);
-                intent.putExtra("id", list.get(position).getId());
-                intent.putExtra("position", position);
-                intent.putExtra("title", list.get(position).getTitle());
-                intent.putExtra("gram0", Integer.toString(list.get(position).getGram0()));
-                intent.putExtra("gram1", Integer.toString(list.get(position).getGram1()));
-
-                startActivity(intent);
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setMessage("실행 하시겠습니까?");
+                builder.setTitle("알림창")
+                        .setCancelable(false)
+                        .setPositiveButton("예", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int i) {
+                                finish();
+                                //여기가 실행버튼
+                            }
+                        })
+                        .setNegativeButton("아니오", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int i) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog alert = builder.create();
+                alert.setTitle("알림창");
+                alert.show();
             }
         });
 
@@ -188,9 +200,9 @@ public class MainActivity extends AppCompatActivity {
             public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
 
-                builder.setTitle("레시피 삭제").setMessage("삭제하시겠습니까?");
+                builder.setTitle("알림창").setMessage("원하시는 기능을 선택해주세요.");
 
-                builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
+                builder.setPositiveButton("삭제", new DialogInterface.OnClickListener(){
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
                         Log.d(TAG, "onClick: 삭제 요청");
@@ -199,10 +211,18 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
-                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener(){
+                builder.setNegativeButton("수정", new DialogInterface.OnClickListener(){
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
-                        Log.d(TAG, "onClick: 삭제 취소");
+                        Log.d(TAG, "onClick: 수정 요청");
+                        Intent intent = new Intent(MainActivity.this, AddActivity.class);
+                        intent.putExtra("id", list.get(position).getId());
+                        intent.putExtra("position", position);
+                        intent.putExtra("title", list.get(position).getTitle());
+                        intent.putExtra("gram0", Integer.toString(list.get(position).getGram0()));
+                        intent.putExtra("gram1", Integer.toString(list.get(position).getGram1()));
+
+                        startActivity(intent);
                     }
                 });
 
