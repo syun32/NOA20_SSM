@@ -15,10 +15,18 @@ public class PlayActivity extends AppCompatActivity {
     private Context mContext;
     private EditText[] gram;
 
+    private Context mContext;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play);
+        mContext = this;
+
+        final String[] condiments = {PreferenceManager.getString(this, "condiment0"), PreferenceManager.getString(this, "condiment1")};
+        TextView[] textView = {findViewById(R.id.condiment0), findViewById(R.id.condiment1)};
+        textView[0].setText(condiments[0]);
+        textView[1].setText(condiments[1]);
 
         mContext = this;
 

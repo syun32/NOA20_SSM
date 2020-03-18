@@ -43,61 +43,66 @@
                 android:layout_width="wrap_content"
                 android:layout_height="500dp"
                 android:layout_gravity="center"
-                android:src="@drawable/help"/>
+                android:src="@drawable/ques1"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textSize="20sp"
-                android:text="1. 사용하실 조미료의 이름을 정해줍니다."
-                android:layout_marginBottom="50dp"/>
+                android:text="사용하실 조미료의 이름을 정해줍니다."
+                android:layout_marginBottom="20dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000000"
+                android:layout_marginBottom="20dp"/>
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="500dp"
                 android:layout_gravity="center"
-                android:src="@drawable/help"/>
+                android:src="@drawable/ques2"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textSize="20sp"
-                android:text="2. 우측 하단의 적색 버튼을 눌러 레시피를 추가 할 수 있습니다."
-                android:layout_marginBottom="50dp"/>
+                android:text="1) 앱을 종료합니다. \n2) 도움말을 볼 수 있습니다. \n3) 레시피를 추가합니다. \n4) 처음에 설정한 조미료를 변경합니다. \n5) 조미료값을 입력해 저장 없이 바로 실행합니다."
+                android:layout_marginBottom="20dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000000"
+                android:layout_marginBottom="20dp"/>
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="500dp"
                 android:layout_gravity="center"
-                android:src="@drawable/help"/>
+                android:src="@drawable/ques3"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textSize="20sp"
-                android:text="3. 레시피의 조미료 양을 작성해주고 확인을 클릭합니다."
-                android:layout_marginBottom="50dp"/>
+                android:text="3번 버튼을 클릭해 \n레시피의 이름, 조미료의 양을 입력합니다."
+                android:layout_marginBottom="20dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000000"
+                android:layout_marginBottom="20dp"/>
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="500dp"
-                android:src="@drawable/help"
+                android:src="@drawable/ques4"
                 android:layout_gravity="center" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textSize="20sp"
-                android:text="4. 해당 레시피를 짧게 클릭 시 실행하게되고, \n 길게 클릭 시 삭제가 가능합니다."
-                android:layout_marginBottom="50dp"/>
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="500dp"
-                android:src="@drawable/help"
-                android:layout_gravity="center" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="20sp"
-                android:text="5. 조미료의 수정을 원할 시 \n 조미료 변경을 클릭 합니다."/>
+                android:text="추가된 레시피를 \n짧게 클릭하여 실행, \n길게 클릭하여 수정 또는 삭제합니다."
+                android:layout_marginBottom="20dp"/>
 
         </LinearLayout>
     </ScrollView>

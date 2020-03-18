@@ -88,21 +88,6 @@ public class AddActivity extends Activity {
     }
     @Override
     public void onBackPressed() {
-        if ( pressedTime == 0 ) {
-            Toast.makeText(AddActivity.this, " 한 번 더 누르면 종료됩니다." , Toast.LENGTH_LONG).show();
-            pressedTime = System.currentTimeMillis();
-        }
-        else {
-            int seconds = (int) (System.currentTimeMillis() - pressedTime);
-
-            if ( seconds > 2000 ) {
-                Toast.makeText(AddActivity.this, " 한 번 더 누르면 종료됩니다." , Toast.LENGTH_LONG).show();
-                pressedTime = 0 ;
-            }
-            else {
-                super.onBackPressed();
-                finish(); // app 종료 시키기
-            }
-        }
+        finish();
     }
 }
