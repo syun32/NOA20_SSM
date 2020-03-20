@@ -12,10 +12,10 @@ import java.net.URL;
 
 public class GetData extends AsyncTask<String, Void, String> {
     private static final String TAG = "@@@GetData";
-    //    private static final String IP = "http://172.30.1.37" + ":9090/NOA_ICT/";
-    private static final String IP = "http://192.168.0.16" + ":9090/NOA_ICT/";
-    String errorString = null;
-    String serverURL;
+        private static final String IP = "http://172.30.1.37" + ":9090/NOA_ICT/";
+//    private static final String IP = "http://192.168.0.16" + ":9090/NOA_ICT/";
+    private String errorString = null;
+    private String serverURL;
 
     @Override
     protected void onPreExecute() {

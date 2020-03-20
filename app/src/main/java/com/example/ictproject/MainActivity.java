@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
         listView = findViewById(R.id.list_main);
         try {
             String[] condiment = {PreferenceManager.getString(this, "condiment0"), PreferenceManager.getString(this, "condiment1")};
-            String myJSON = new GetData().execute("getData.php", "recipe", "all").get();
+            String myJSON = new GetData().execute("getData.php").get();
             Log.d(TAG, "onCreate: " + myJSON);
 
             if (myJSON.equals("")) {
@@ -171,7 +171,7 @@ public class MainActivity extends AppCompatActivity {
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setMessage("실행 하시겠습니까?");
                 builder.setTitle("알림창")
@@ -179,7 +179,9 @@ public class MainActivity extends AppCompatActivity {
                         .setPositiveButton("예", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int i) {
-                                finish();
+                                Log.d(TAG, "onClick: clickListner");
+                                InsertData task = new InsertData();
+                                task.execute("recipeExecData.php", getString(R.string.DB_colID), Integer.toString(list.get(position).getId()));
                                 //여기가 실행버튼
                             }
                         })
