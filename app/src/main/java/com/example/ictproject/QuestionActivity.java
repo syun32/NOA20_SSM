@@ -18,7 +18,7 @@ public class QuestionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
 
-
+        //X 표시에 대한 종료 이벤트
         quesbackbtn = findViewById(R.id.ques_back);
         quesbackbtn.setOnClickListener(new View.OnClickListener() {
             @Override

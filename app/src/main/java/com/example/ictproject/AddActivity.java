@@ -18,7 +18,6 @@ public class AddActivity extends Activity {
     private int id;
     private int position;
     private String title;
-    private long pressedTime = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

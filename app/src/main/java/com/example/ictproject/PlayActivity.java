@@ -28,6 +28,7 @@ public class PlayActivity extends AppCompatActivity {
 
         gram = new EditText[]{findViewById(R.id.gram0), findViewById(R.id.gram1)};
 
+        //확인을 누르면 EditText에 입력된 값을 전송시킴
         Button bt_submit = findViewById(R.id.bt_sumbit);
         bt_submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +46,7 @@ public class PlayActivity extends AppCompatActivity {
             }
         });
 
+        //X 표시에 대한 종료 이벤트
         ImageButton backbtn = findViewById(R.id.play_back);
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override

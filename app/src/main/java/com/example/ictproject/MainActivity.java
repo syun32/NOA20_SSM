@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         updateLV();
         setListner();
 
+        //플로팅액션버튼 이벤트
         FloatingActionButton fab = findViewById(R.id.floatingActionButton);
         fab.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -58,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //도움말 버튼 이벤트
         ImageButton quesbtn = findViewById(R.id.main_ques);
         quesbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        //조미료 변경 버튼 이벤트
         Button bt_rm = findViewById(R.id.bt_remove);
         bt_rm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,6 +80,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        //바로실행 버튼 이벤트
         Button bt_play = findViewById(R.id.bt_play);
         bt_play.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        //x 표시에 대한 종료 이벤트
         ImageButton main_exit = findViewById(R.id.main_back);
         main_exit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -167,6 +172,9 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
+
+
     public void setListner(){
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -235,6 +243,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    //취소키를 두번 누르면 종료하는 함수
     @Override
     public void onBackPressed() {
         if ( pressedTime == 0 ) {
