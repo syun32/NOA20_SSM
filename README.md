@@ -115,25 +115,30 @@ echo "*" . $row['condiment'];
 ```
 
 ## [Arduino](https://github.com/eun-seong/NOA20_SSM/tree/master/Arduino)
-아두이노에서 실행되는 파일   
+아두이노에서 실행되는 파일    
+- 모터a   
+조미료통 안에 있는 모터로, 조미료가 습도로 인해 굳을 경우를 대비해 분쇄해주는 역할을 한다.   
+- 모터b   
+조미료를 분출할 때 사용되는 모터로, 통과 연결되어 있는 스크류를 돌려 조미료를 뒤에서 앞으로 밀어내는 역할을 한다.
 #### Main.ino
 모터 제어와 로드셀 입력 부분을 담당        
 분출한 양이 목표 무게의 절반을 넘어가면 멈춤    
 -> 분출구와 저울 간의 거리로 인해 실제 측정된 무게와 최종 측정 무게에 차이가 있기 때문에 이 차이를 줄이기 위해 모터의 동작을 제어한다.       
 ```c++
-// 설정한 calibration factor 값을 적용scale.set_scale(calibration_factor); 
+// 설정한 calibration factor 값을 적용
+scale.set_scale(calibration_factor); 
 ...
 while (weight < target && operation == 1) {
-	//모터b 시계 방향 작동
+  //모터b 시계 방향 작동
   analogWrite(downmotor1, 200); 
-	//모터b 시계 방향으로 작동시키기 위해 반시계 방향을 0으로설정
+  //모터b 시계 방향으로 작동시키기 위해 반시계 방향을 0으로설정
   analogWrite(downmotor2, 0); 
-	//모터a 시계 방향 작동
+  //모터a 시계 방향 작동
   analogWrite(uppermotor1, 200); 
-	//모터a 시계 방향으로 작동시키기 위해 반시계 방향을 0으로설정
+  //모터a 시계 방향으로 작동시키기 위해 반시계 방향을 0으로설정
   analogWrite(uppermotot2, 0); 
 
-	// 분출한 양이 목표무게의 절반을 넘어가면 일정 간격으로 모터가 멈춤
+  // 분출한 양이 목표무게의 절반을 넘어가면 일정 간격으로 모터가 멈춤
   if (weight >= target * 0.5) { 
     delay(50);
     analogWrite(downmotor1, 0);
@@ -146,6 +151,8 @@ while (weight < target && operation == 1) {
   Serial.println(" g");
   delay(100);
 }
+// 분출한 양이 목표 무게에 도달하면 모터를 멈춤
+...
 ```
 #### setting_factor.ino
 로드셀의 설계에 따라 calibration factor 값이 달라지므로 기기 완성 후 팩터값을 찾는 동작을 최초 한 번 해야 한다.     
@@ -156,9 +163,9 @@ while (standard != weight)
   scale.set_scale(calibration_factor);
   weight = scale.get_units() * 453.592;
   if (standard < weight)
-    calibration_factor += 1000;//측정 무게가 실제 무게보다 클 때 calibration_factor값이 1000씩 증가
+    calibration_factor += 1000;	//측정 무게가 실제 무게보다 클 때 calibration_factor값이 1000씩 증가
   if (standard > weight)
-    calibration_factor -= 1000;//측정 무게가 실제 무게보다 작을 때 calibration_factor값이 1000씩 감소
+    calibration_factor -= 1000;	//측정 무게가 실제 무게보다 작을 때 calibration_factor값이 1000씩 감소
   Serial.print("Reading: ");
   delay(200);
   Serial.print(weight, 1);
@@ -173,14 +180,14 @@ while (standard != weight)
 #### nodeMCU.ino
 서버에서 실행할 분출 수치를 받아 온 후 우노 보드로 시리얼 통신을 통해 그 값을 전송한다.    
 ```c++
-char c = client.read();	//서버로부터 받아오는 문자값
+char c = client.read();		//서버로부터 받아오는 문자값
 if (c == '*') {
   while (client.available()) {
     char c = client.read();	//서버로부터 받아오는 문자값
-    Serial.println(c);	//nodemcu시리얼창에 받아온값 표시
-    SPI.transfer(c);	//spi 통신에서 데이터를 보내고 받는 함수
-    str += c; 	//받아온 c값들을 str으로 묶어서 표시
-    Serial.println(str);//str값을 nodemcu상에 표시
+    Serial.println(c);		//nodemcu시리얼창에 받아온값 표시
+    SPI.transfer(c);		//spi 통신에서 데이터를 보내고 받는 함수
+    str += c; 			//받아온 c값들을 str으로 묶어서 표시
+    Serial.println(str);	//str값을 nodemcu상에 표시
   }
 }
 ...
