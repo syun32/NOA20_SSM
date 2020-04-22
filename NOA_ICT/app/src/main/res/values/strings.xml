@@ -7,4 +7,5 @@
     <string name="prevTitle">prevTitle</string>
     <string name="DB_colCondiment0">condiment0</string>
     <string name="DB_colCondiment1">condiment1</string>
+    <string name="TITLE_BAR">SSM</string>
 </resources>

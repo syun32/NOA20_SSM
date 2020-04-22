@@ -26,7 +26,7 @@
             android:gravity="center"
             android:layout_gravity="center"
             android:textSize="30sp"
-            android:text="ICT 융합 프로젝트"/>
+            android:text="@string/TITLE_BAR"/>
 
         </LinearLayout>
     <ScrollView
