@@ -13,7 +13,7 @@ NOA 20 | 스마트 조미료통과 연동할 어플리케이션
 * PHP를 통해 MySQL과 연동하여 사용자 데이터베이스 생성    
 * 사용자 데이터 시각화    
 
-## [Android](https://github.com/eun-seong/NOA20_SSM/tree/master/NOA_ICT))
+## [Android](https://github.com/eun-seong/NOA20_SSM/tree/master/NOA_ICT)
 안드로이드 어플리케이션
 #### InitialActivity.java
 사용자가 조미료통에 어떤 조미료를 넣을지 설정하는 액티비티    
