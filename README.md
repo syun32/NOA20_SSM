@@ -114,7 +114,7 @@ try {
 echo "*" . $row['condiment'];
 ```
 
-### [Arduino](https://github.com/eun-seong/NOA20_SSM/tree/master/Arduino)
+## [Arduino](https://github.com/eun-seong/NOA20_SSM/tree/master/Arduino)
 아두이노에서 실행되는 파일   
 #### Main.ino
 모터 제어와 로드셀 입력 부분을 담당        
