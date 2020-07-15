@@ -2,6 +2,7 @@ package com.example.ictproject;
 
 import android.app.Activity;
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,7 +19,10 @@ public class AddActivity extends Activity {
     private int id;
     private int position;
     private String title;
-    private long pressedTime = 0;
+    private String condiment0;
+    private String condiment1;
+
+    SQLiteDatabase recipeDB = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,12 +30,20 @@ public class AddActivity extends Activity {
         setContentView(R.layout.activity_add);
         mContext = this;
 
-        final String[] condiments = {PreferenceManager.getString(this, "condiment0"), PreferenceManager.getString(this, "condiment1")};
+        condiment0 = getIntent().getStringExtra("condiment0");
+        condiment1 = getIntent().getStringExtra("condiment1");
 
-        final EditText[] inputText = {findViewById(R.id.title), findViewById(R.id.gram0), findViewById(R.id.gram1)};
         TextView[] textView = {findViewById(R.id.condiment0), findViewById(R.id.condiment1)};
-        textView[0].setText(condiments[0]);
-        textView[1].setText(condiments[1]);
+        final EditText[] inputText = {findViewById(R.id.title), findViewById(R.id.gram0), findViewById(R.id.gram1)};
+
+        if(condiment1 == null && condiment0 == null ){
+            Log.d(TAG, "onCreate: condiment is null");
+            condiment0 = PreferenceManager.getString(this, "condiment0");
+            condiment1 = PreferenceManager.getString(this, "condiment1");
+        }
+
+        textView[0].setText(condiment0);
+        textView[1].setText(condiment1);
 
         position = getIntent().getIntExtra("position", -1);
         id = getIntent().getIntExtra("id", -1);
@@ -59,20 +71,36 @@ public class AddActivity extends Activity {
                     return;
                 }
 
-                InsertData task = new InsertData();
-                if(position == -1)
-                    task.execute("setData.php",
-                            getString(R.string.DB_colTitle), title,
-                            getString(R.string.DB_colCondiment0), gram0,
-                            getString(R.string.DB_colCondiment1), gram1
-                    );
-                else task.execute("editData.php",
-                        getString(R.string.DB_colID), Integer.toString(id),
-                        getString(R.string.DB_colTitle), title,
-                        getString(R.string.DB_colCondiment0), gram0,
-                        getString(R.string.DB_colCondiment1), gram1
-                );
+                try{
+                    recipeDB = openOrCreateDatabase(DataBase.RecipeEntry.DB_NAME, MODE_PRIVATE, null);
 
+                    if(position == -1) {
+                        String insertSQL = "INSERT INTO " + DataBase.RecipeEntry.TABLE_NAME + " ("
+                                + DataBase.RecipeEntry.COLUMN_NAME_TITLE + ", "
+                                + DataBase.RecipeEntry.COLUMN_NAME_CONDIMENTS0 + ", "
+                                + DataBase.RecipeEntry.COLUMN_NAME_CONDIMENTS1 + ", "
+                                + DataBase.RecipeEntry.COLUMN_NAME_GRAM0 + ", "
+                                + DataBase.RecipeEntry.COLUMN_NAME_GRAM1
+                                + ")  VALUES ('"
+                                + title + "', '" + condiment0 + "', '" + condiment1 + "', " + gram0 + ", " + gram1 + ");";
+                        recipeDB.execSQL(insertSQL);
+                    } else {
+                        String updateSQL = "UPDATE "+ DataBase.RecipeEntry.TABLE_NAME + " SET "
+                                + DataBase.RecipeEntry.COLUMN_NAME_TITLE + " = '" + title + "', "
+                                + DataBase.RecipeEntry.COLUMN_NAME_CONDIMENTS0 + " = '" + condiment0 + "', "
+                                + DataBase.RecipeEntry.COLUMN_NAME_CONDIMENTS1 + " = '" + condiment1 + "', "
+                                + DataBase.RecipeEntry.COLUMN_NAME_GRAM0 + " = " + gram0 + ", "
+                                + DataBase.RecipeEntry.COLUMN_NAME_GRAM1 + " = " + gram1
+                                + " WHERE ID = " + id;
+                        recipeDB.execSQL(updateSQL);
+                    }
+                    recipeDB.close();
+
+                } catch (Exception e){
+                    e.printStackTrace();
+                }
+
+                ((MainActivity)MainActivity.mContext).updateLV();
                 finish();
             }
         });

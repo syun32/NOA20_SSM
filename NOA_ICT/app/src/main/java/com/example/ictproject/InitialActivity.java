@@ -50,6 +50,7 @@ public class InitialActivity extends Activity {
         });
 
     }
+
     @Override
     public void onBackPressed() {
         if ( pressedTime == 0 ) {
