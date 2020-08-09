@@ -29,37 +29,36 @@
 19-->/Users/eun/Projects/NOA20_SSM/NOA_ICT/app/src/main/AndroidManifest.xml:11:9-54
 20        android:supportsRtl="true"
 20-->/Users/eun/Projects/NOA20_SSM/NOA_ICT/app/src/main/AndroidManifest.xml:12:9-35
-21        android:testOnly="true"
-22        android:theme="@style/AppTheme"
-22-->/Users/eun/Projects/NOA20_SSM/NOA_ICT/app/src/main/AndroidManifest.xml:13:9-40
-23        android:usesCleartextTraffic="true" >
-23-->/Users/eun/Projects/NOA20_SSM/NOA_ICT/app/src/main/AndroidManifest.xml:14:9-44
-24        <activity android:name="com.example.ictproject.PlayActivity" />
-24-->/Users/eun/Projects/NOA20_SSM/NOA_ICT/app/src/main/AndroidManifest.xml:15:9-59
-24-->/Users/eun/Projects/NOA20_SSM/NOA_ICT/app/src/main/AndroidManifest.xml:15:19-47
-25        <activity android:name="com.example.ictproject.AddActivity" />
-25-->/Users/eun/Projects/NOA20_SSM/NOA_ICT/app/src/main/AndroidManifest.xml:16:9-49
-25-->/Users/eun/Projects/NOA20_SSM/NOA_ICT/app/src/main/AndroidManifest.xml:16:19-46
-26        <activity android:name="com.example.ictproject.QuestionActivity" />
-26-->/Users/eun/Projects/NOA20_SSM/NOA_ICT/app/src/main/AndroidManifest.xml:17:9-54
-26-->/Users/eun/Projects/NOA20_SSM/NOA_ICT/app/src/main/AndroidManifest.xml:17:19-51
-27        <activity android:name="com.example.ictproject.InitialActivity" />
-27-->/Users/eun/Projects/NOA20_SSM/NOA_ICT/app/src/main/AndroidManifest.xml:18:9-53
-27-->/Users/eun/Projects/NOA20_SSM/NOA_ICT/app/src/main/AndroidManifest.xml:18:19-50
-28        <activity android:name="com.example.ictproject.MainActivity" >
-28-->/Users/eun/Projects/NOA20_SSM/NOA_ICT/app/src/main/AndroidManifest.xml:19:9-25:20
-28-->/Users/eun/Projects/NOA20_SSM/NOA_ICT/app/src/main/AndroidManifest.xml:19:19-47
-29            <intent-filter>
-29-->/Users/eun/Projects/NOA20_SSM/NOA_ICT/app/src/main/AndroidManifest.xml:20:13-24:29
-30                <action android:name="android.intent.action.MAIN" />
-30-->/Users/eun/Projects/NOA20_SSM/NOA_ICT/app/src/main/AndroidManifest.xml:21:17-69
-30-->/Users/eun/Projects/NOA20_SSM/NOA_ICT/app/src/main/AndroidManifest.xml:21:25-66
-31
-32                <category android:name="android.intent.category.LAUNCHER" />
-32-->/Users/eun/Projects/NOA20_SSM/NOA_ICT/app/src/main/AndroidManifest.xml:23:17-77
-32-->/Users/eun/Projects/NOA20_SSM/NOA_ICT/app/src/main/AndroidManifest.xml:23:27-74
-33            </intent-filter>
-34        </activity>
-35    </application>
-36
-37</manifest>
+21        android:theme="@style/AppTheme"
+21-->/Users/eun/Projects/NOA20_SSM/NOA_ICT/app/src/main/AndroidManifest.xml:13:9-40
+22        android:usesCleartextTraffic="true" >
+22-->/Users/eun/Projects/NOA20_SSM/NOA_ICT/app/src/main/AndroidManifest.xml:14:9-44
+23        <activity android:name="com.example.ictproject.PlayActivity" />
+23-->/Users/eun/Projects/NOA20_SSM/NOA_ICT/app/src/main/AndroidManifest.xml:15:9-59
+23-->/Users/eun/Projects/NOA20_SSM/NOA_ICT/app/src/main/AndroidManifest.xml:15:19-47
+24        <activity android:name="com.example.ictproject.AddActivity" />
+24-->/Users/eun/Projects/NOA20_SSM/NOA_ICT/app/src/main/AndroidManifest.xml:16:9-49
+24-->/Users/eun/Projects/NOA20_SSM/NOA_ICT/app/src/main/AndroidManifest.xml:16:19-46
+25        <activity android:name="com.example.ictproject.QuestionActivity" />
+25-->/Users/eun/Projects/NOA20_SSM/NOA_ICT/app/src/main/AndroidManifest.xml:17:9-54
+25-->/Users/eun/Projects/NOA20_SSM/NOA_ICT/app/src/main/AndroidManifest.xml:17:19-51
+26        <activity android:name="com.example.ictproject.InitialActivity" />
+26-->/Users/eun/Projects/NOA20_SSM/NOA_ICT/app/src/main/AndroidManifest.xml:18:9-53
+26-->/Users/eun/Projects/NOA20_SSM/NOA_ICT/app/src/main/AndroidManifest.xml:18:19-50
+27        <activity android:name="com.example.ictproject.MainActivity" >
+27-->/Users/eun/Projects/NOA20_SSM/NOA_ICT/app/src/main/AndroidManifest.xml:19:9-25:20
+27-->/Users/eun/Projects/NOA20_SSM/NOA_ICT/app/src/main/AndroidManifest.xml:19:19-47
+28            <intent-filter>
+28-->/Users/eun/Projects/NOA20_SSM/NOA_ICT/app/src/main/AndroidManifest.xml:20:13-24:29
+29                <action android:name="android.intent.action.MAIN" />
+29-->/Users/eun/Projects/NOA20_SSM/NOA_ICT/app/src/main/AndroidManifest.xml:21:17-69
+29-->/Users/eun/Projects/NOA20_SSM/NOA_ICT/app/src/main/AndroidManifest.xml:21:25-66
+30
+31                <category android:name="android.intent.category.LAUNCHER" />
+31-->/Users/eun/Projects/NOA20_SSM/NOA_ICT/app/src/main/AndroidManifest.xml:23:17-77
+31-->/Users/eun/Projects/NOA20_SSM/NOA_ICT/app/src/main/AndroidManifest.xml:23:27-74
+32            </intent-filter>
+33        </activity>
+34    </application>
+35
+36</manifest>
