@@ -7,6 +7,9 @@ NOA 20 | 씀(SSM, Smart Spice Machine)
 =======
 NOA 20 | 씀(SSM, Smart Spice Machine)   
 스마트 조미료통
+<<<<<<< HEAD
+>>>>>>> parent of 59554db... Update README.md
+=======
 >>>>>>> parent of 59554db... Update README.md
 
 ## 설명
