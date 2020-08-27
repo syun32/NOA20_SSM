@@ -7,12 +7,18 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,9 +36,15 @@ public class MainActivity extends AppCompatActivity {
     ListView listView;
     listAdapter adapter;
     List<Data> list;
+    private EditText editSearch;
+    private SearchAdapter s_adapter;
+    private ArrayList<Data> arrayList;
     private long pressedTime = 0;
     public static Context mContext;
     SQLiteDatabase recipeDB = null;
+
+    TextView tv_input_length;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 PreferenceManager.clear(mContext);
-                Intent intent = new Intent(MainActivity.this, InitialActivity.class);
+                Intent intent = new Intent(MainActivity.this, ChangeSpiceActivity.class);
                 startActivity(intent);
             }
         });
@@ -91,34 +103,40 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //search
+        editSearch = (EditText) findViewById(R.id.search);
+        tv_input_length = findViewById(R.id.tv_input_length);
+        arrayList = new ArrayList<>();
+        arrayList.addAll(list);
 
-        ImageButton main_exit = findViewById(R.id.main_back);
-        main_exit.setOnClickListener(new View.OnClickListener() {
+        s_adapter = new SearchAdapter(list, this);
+        listView.setAdapter(adapter);
+
+        editSearch.addTextChangedListener(new TextWatcher() {
             @Override
-            public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                builder.setMessage("정말로 종료하시겠습니까?");
-                builder.setTitle("알림창")
-                        .setCancelable(false)
-                        .setPositiveButton("예", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int i) {
-                                finish();
-                            }
-                        })
-                        .setNegativeButton("아니오", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int i) {
-                                dialog.cancel();
-                            }
-                        });
-                AlertDialog alert = builder.create();
-                alert.setTitle("종료 알림창");
-                alert.show();
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                tv_input_length.setText(editable.length()+"글자");
+                String text = editSearch.getText().toString();
+                search(text);
             }
         });
 
-
+        //EditText Enter key 방지
+        /*editSearch.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if(keyCode==event.KEYCODE_ENTER) return true;
+                return false;
+            }
+        });*/
     }
 
     @Override
@@ -173,6 +191,7 @@ public class MainActivity extends AppCompatActivity {
             }
             else {
                 Log.d(TAG, "updateLV: c is not null");
+                //findViewById(R.id.tv_navigation).setVisibility(View.INVISIBLE);
                 while (c.moveToNext()) {
                     int id = c.getInt(c.getColumnIndex(DataBase.RecipeEntry.COLUMN_NAME_ID));
                     String title = c.getString(c.getColumnIndex(DataBase.RecipeEntry.COLUMN_NAME_TITLE));
@@ -293,7 +312,7 @@ public class MainActivity extends AppCompatActivity {
         else {
             int seconds = (int) (System.currentTimeMillis() - pressedTime);
 
-            if ( seconds > 2000 ) {
+            if ( seconds > 1000 ) {
                 Toast.makeText(MainActivity.this, " 한 번 더 누르면 종료됩니다." , Toast.LENGTH_LONG).show();
                 pressedTime = 0 ;
             }
@@ -302,6 +321,22 @@ public class MainActivity extends AppCompatActivity {
                 finish(); // app 종료 시키기
             }
         }
+    }
+
+    public void search(String charText) {
+        list.clear();
+
+        if(charText.length() == 0) {
+            list.addAll(arrayList);
+        }
+        else {
+            for(int i = 0; i < arrayList.size(); i++){
+                if(arrayList.get(i).getTitle().contains(charText)){
+                    list.add(arrayList.get(i));
+                }
+            }
+        }
+        s_adapter.notifyDataSetChanged();
     }
 
 

@@ -12,17 +12,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".PlayActivity"></activity>
-        <activity android:name=".AddActivity" />
-        <activity android:name=".QuestionActivity" />
-        <activity android:name=".InitialActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".ChangeSpiceActivity"></activity>
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".PlayActivity" />
+        <activity android:name=".AddActivity" />
+        <activity android:name=".QuestionActivity" />
+        <activity android:name=".InitialActivity" />
     </application>
 
 </manifest>

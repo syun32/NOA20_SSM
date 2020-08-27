@@ -3,29 +3,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
     <LinearLayout
+        android:id="@+id/LL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#CCCCCC"
-        android:padding="10dp"
-        android:id="@+id/LL"
-        android:orientation="horizontal">
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal"
+        android:padding="10dp">
 
         <ImageButton
             android:id="@+id/add_back"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center"
-            android:background="@drawable/ic_clear_black_24dp"/>
+            android:background="@drawable/arrow_white" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
             android:layout_gravity="center"
-            android:textSize="30sp"
-            android:text="@string/TITLE_BAR"/>
+            android:layout_weight="1"
+            android:fontFamily="@font/tmoneyround"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:text="음식 추가"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="30sp" />
 
     </LinearLayout>
 
@@ -38,70 +42,115 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginBottom="10dp"
+            android:paddingHorizontal="10dp"
+            android:background="@drawable/round_corner"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="음식 이름 : "
-                android:textSize="20sp"/>
+                android:fontFamily="@font/tmoneyround"
+                android:text="음식 이름  "
+                android:textSize="20sp" />
+
             <EditText
                 android:id="@+id/title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text"
+                android:fontFamily="@font/tmoneyround"
                 android:hint="제목"
-                android:textSize="20sp"
-                />
+                android:inputType="text"
+                android:textSize="20sp" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginBottom="10dp"
+            android:paddingHorizontal="10dp"
+            android:background="@drawable/round_corner"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/condiment0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="조미료1 양 : "
-                android:textSize="20sp"/>
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/tmoneyround"
+                android:text="조미료1 양  "
+                android:textSize="20sp" />
+
             <EditText
                 android:id="@+id/gram0"
-                android:layout_width="match_parent"
+                android:layout_width="210dp"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:inputType="number"
+                android:fontFamily="@font/tmoneyround"
                 android:hint="그램 수"
-                />
+                android:inputType="number"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:text="g"
+                android:textSize="20sp" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginBottom="10dp"
+            android:paddingHorizontal="10dp"
+            android:background="@drawable/round_corner"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/condiment1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="조미료2 양 : "
-                android:textSize="20sp"/>
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/tmoneyround"
+                android:text="조미료2 양  "
+                android:textSize="20sp" />
+
             <EditText
                 android:id="@+id/gram1"
-                android:layout_width="match_parent"
+                android:layout_width="210dp"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:inputType="number"
+                android:fontFamily="@font/tmoneyround"
                 android:hint="그램 수"
-                />
+                android:inputType="number"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:text="g"
+                android:textSize="20sp" />
+
         </LinearLayout>
 
         <Button
             android:id="@+id/bt_sumbit"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="확인"/>
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/round_corner_rightblue"
+            android:fontFamily="@font/tmoneyround"
+            android:paddingTop="8dp"
+            android:text="확인"
+            android:textSize="18sp" />
 
     </LinearLayout>
 </LinearLayout>

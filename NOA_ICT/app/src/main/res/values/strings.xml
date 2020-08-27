@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ICT Project</string>
+    <string name="app_name">SSM</string>
 
     <string name="DB_tableName">recipe</string>
     <string name="DB_colID">id</string>
@@ -8,4 +8,6 @@
     <string name="DB_colCondiment0">condiment0</string>
     <string name="DB_colCondiment1">condiment1</string>
     <string name="TITLE_BAR">SSM</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
