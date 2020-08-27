@@ -1,19 +1,8 @@
 # NOA20_ICT
-<<<<<<< HEAD
 
 NOA 20 | 씀(SSM, Smart Spice Machine)  
 스마트 조미료통  
 2020 ICT 융합 프로젝트 공모전 장려상🏅
-=======
-NOA 20 | 씀(SSM, Smart Spice Machine)   
-스마트 조미료통
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 59554db... Update README.md
-=======
->>>>>>> parent of 59554db... Update README.md
-=======
->>>>>>> parent of 59554db... Update README.md
 
 ## 설명
 
