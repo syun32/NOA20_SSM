@@ -13,7 +13,7 @@ import java.net.URL;
 public class InsertData extends AsyncTask<String, Void, String> {
     private static final String TAG = "@@@InsertData";
 //        private static final String IP = "http://172.30.1.37" + ":9090/NOA_ICT/";
-    private static final String IP = "http://192.168.0.16" + ":9090/NOA_ICT/";
+    private static final String IP = "http://15.164.224.223" + ":9091/";
 
     @Override
     protected void onPreExecute() {

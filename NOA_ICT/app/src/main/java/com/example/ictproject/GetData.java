@@ -12,10 +12,9 @@ import java.net.URL;
 
 public class GetData extends AsyncTask<String, Void, String> {
     private static final String TAG = "@@@GetData";
-//        private static final String IP = "http://172.30.1.37" + ":9090/NOA_ICT/";
-    private static final String IP = "http://192.168.0.16" + ":9090/NOA_ICT/";
+    //        private static final String IP = "http://172.30.1.37" + ":9090/NOA_ICT/";
+    private static final String IP = "http://15.164.224.223" + ":9091/";
     private String errorString = null;
-    private String serverURL;
 
     @Override
     protected void onPreExecute() {
@@ -31,7 +30,7 @@ public class GetData extends AsyncTask<String, Void, String> {
 
     @Override
     protected String doInBackground(String... params) {
-        serverURL = IP + params[0];
+        String serverURL = IP + params[0];
         String postParameters="";
 
         for(int i = 1;i < params.length;i+=2){
@@ -95,7 +94,7 @@ public class GetData extends AsyncTask<String, Void, String> {
             Log.d(TAG, "InsertData: Error ", e);
             errorString = e.toString();
 
-            return null;
+            return errorString;
         }
 
     }

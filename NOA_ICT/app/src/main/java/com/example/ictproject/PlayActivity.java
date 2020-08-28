@@ -35,9 +35,11 @@ public class PlayActivity extends AppCompatActivity {
                 String gram0 = gram[0].getText().toString();
                 String gram1 = gram[1].getText().toString();
 
-                // TODO NFC 추가
-                // 바로 실행
-
+                InsertData task = new InsertData();
+                task.execute("executeData.php",
+                        getString(R.string.DB_colCondiment0), gram0,
+                        getString(R.string.DB_colCondiment1), gram1
+                );
 
                 finish();
             }

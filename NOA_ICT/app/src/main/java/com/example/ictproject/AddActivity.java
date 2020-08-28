@@ -22,7 +22,7 @@ public class AddActivity extends Activity {
     private String condiment0;
     private String condiment1;
 
-    SQLiteDatabase recipeDB = null;
+//    SQLiteDatabase recipeDB = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,29 +72,43 @@ public class AddActivity extends Activity {
                 }
 
                 try{
-                    recipeDB = openOrCreateDatabase(DataBase.RecipeEntry.DB_NAME, MODE_PRIVATE, null);
+//                    recipeDB = openOrCreateDatabase(DataBase.RecipeEntry.DB_NAME, MODE_PRIVATE, null);
 
+                    InsertData task = new InsertData();
                     if(position == -1) {
-                        String insertSQL = "INSERT INTO " + DataBase.RecipeEntry.TABLE_NAME + " ("
-                                + DataBase.RecipeEntry.COLUMN_NAME_TITLE + ", "
-                                + DataBase.RecipeEntry.COLUMN_NAME_CONDIMENTS0 + ", "
-                                + DataBase.RecipeEntry.COLUMN_NAME_CONDIMENTS1 + ", "
-                                + DataBase.RecipeEntry.COLUMN_NAME_GRAM0 + ", "
-                                + DataBase.RecipeEntry.COLUMN_NAME_GRAM1
-                                + ")  VALUES ('"
-                                + title + "', '" + condiment0 + "', '" + condiment1 + "', " + gram0 + ", " + gram1 + ");";
-                        recipeDB.execSQL(insertSQL);
+//                        String insertSQL = "INSERT INTO " + DataBase.RecipeEntry.TABLE_NAME + " ("
+//                                + DataBase.RecipeEntry.COLUMN_NAME_TITLE + ", "
+//                                + DataBase.RecipeEntry.COLUMN_NAME_CONDIMENTS0 + ", "
+//                                + DataBase.RecipeEntry.COLUMN_NAME_CONDIMENTS1 + ", "
+//                                + DataBase.RecipeEntry.COLUMN_NAME_GRAM0 + ", "
+//                                + DataBase.RecipeEntry.COLUMN_NAME_GRAM1
+//                                + ")  VALUES ('"
+//                                + title + "', '" + condiment0 + "', '" + condiment1 + "', " + gram0 + ", " + gram1 + ");";
+//                        recipeDB.execSQL(insertSQL);
+
+                        task.execute("setData.php",
+                                getString(R.string.DB_colTitle), title,
+                                getString(R.string.DB_colCondiment0), gram0,
+                                getString(R.string.DB_colCondiment1), gram1
+                        );
                     } else {
-                        String updateSQL = "UPDATE "+ DataBase.RecipeEntry.TABLE_NAME + " SET "
-                                + DataBase.RecipeEntry.COLUMN_NAME_TITLE + " = '" + title + "', "
-                                + DataBase.RecipeEntry.COLUMN_NAME_CONDIMENTS0 + " = '" + condiment0 + "', "
-                                + DataBase.RecipeEntry.COLUMN_NAME_CONDIMENTS1 + " = '" + condiment1 + "', "
-                                + DataBase.RecipeEntry.COLUMN_NAME_GRAM0 + " = " + gram0 + ", "
-                                + DataBase.RecipeEntry.COLUMN_NAME_GRAM1 + " = " + gram1
-                                + " WHERE ID = " + id;
-                        recipeDB.execSQL(updateSQL);
+//                        String updateSQL = "UPDATE "+ DataBase.RecipeEntry.TABLE_NAME + " SET "
+//                                + DataBase.RecipeEntry.COLUMN_NAME_TITLE + " = '" + title + "', "
+//                                + DataBase.RecipeEntry.COLUMN_NAME_CONDIMENTS0 + " = '" + condiment0 + "', "
+//                                + DataBase.RecipeEntry.COLUMN_NAME_CONDIMENTS1 + " = '" + condiment1 + "', "
+//                                + DataBase.RecipeEntry.COLUMN_NAME_GRAM0 + " = " + gram0 + ", "
+//                                + DataBase.RecipeEntry.COLUMN_NAME_GRAM1 + " = " + gram1
+//                                + " WHERE ID = " + id;
+//                        recipeDB.execSQL(updateSQL);
+
+                        task.execute("editData.php",
+                                getString(R.string.DB_colID), Integer.toString(id),
+                                getString(R.string.DB_colTitle), title,
+                                getString(R.string.DB_colCondiment0), gram0,
+                                getString(R.string.DB_colCondiment1), gram1
+                        );
                     }
-                    recipeDB.close();
+//                    recipeDB.close();
 
                 } catch (Exception e){
                     e.printStackTrace();
