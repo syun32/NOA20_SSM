@@ -20,11 +20,13 @@ if ($stmt->rowCount() > 0) {
 }
 
 try {
+    echo "\ntry start\n";
     $stmt2 = $con->prepare("UPDATE ino SET condiment=0 WHERE id={$id}");
     $stmt2->execute();
-
+    echo "try finish\n"; 
 } catch (PDOException $e) {
     die("Database error: " . $e->getMessage());
+    echo "error\n";
 }
 
 ?>
