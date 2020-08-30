@@ -18,10 +18,11 @@ if ($stmt->rowCount() > 0) {
 
     try {
         $stmt = $con->prepare("UPDATE ino SET condiment=0 WHERE id={$id}");
+        $stmt->execute();
     } catch (PDOException $e) {
         die("Database error: " . $e->getMessage());
     }
 
-    echo "*" . $row['condiment'];
+    echo "*".$row['condiment'];
 }
 ?>
