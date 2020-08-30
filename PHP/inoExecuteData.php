@@ -16,13 +16,15 @@ if ($stmt->rowCount() > 0) {
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     extract($row);
 
-    try {
-        $stmt = $con->prepare("UPDATE ino SET condiment=0 WHERE id={$id}");
-        $stmt->execute();
-    } catch (PDOException $e) {
-        die("Database error: " . $e->getMessage());
-    }
-
     echo "*".$row['condiment'];
 }
+
+try {
+    $stmt2 = $con->prepare("UPDATE ino SET condiment=0 WHERE id={$id}");
+    $stmt2->execute();
+
+} catch (PDOException $e) {
+    die("Database error: " . $e->getMessage());
+}
+
 ?>
