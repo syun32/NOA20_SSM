@@ -29,10 +29,10 @@ public class QuestionHolderPage extends RecyclerView.ViewHolder {
         else if(data.idx == 2)
             iv_image.setImageResource(R.drawable.ques2);
         else if(data.idx == 3)
-            iv_image.setImageResource(R.drawable.ques2);
-        else if(data.idx == 4)
             iv_image.setImageResource(R.drawable.ques3);
-        else if(data.idx == 5)
+        else if(data.idx == 4)
             iv_image.setImageResource(R.drawable.ques4);
+        else if(data.idx == 5)
+            iv_image.setImageResource(R.drawable.ques5);
     }
 }

@@ -194,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
             }
             else {
                 Log.d(TAG, "updateLV: DB is not null");
-                //findViewById(R.id.tv_navigation).setVisibility(View.INVISIBLE);
+                findViewById(R.id.tv_navigation).setVisibility(View.INVISIBLE);
 //                while (c.moveToNext()) {
 //                    int id = c.getInt(c.getColumnIndex(DataBase.RecipeEntry.COLUMN_NAME_ID));
 //                    String title = c.getString(c.getColumnIndex(DataBase.RecipeEntry.COLUMN_NAME_TITLE));
