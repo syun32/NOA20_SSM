@@ -20,7 +20,7 @@
             android:background="@drawable/minitalk"
             android:fontFamily="@font/tmoneyround"
             android:gravity="center"
-            android:text="조미료통 수에 맞게\n조미료를 설정해주세요!"
+            android:text="사용할 조미료를\n설정해주세요!"
             android:textAllCaps="false"
             android:textIsSelectable="false"
             android:textSize="14sp" />
