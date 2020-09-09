@@ -17,15 +17,15 @@ if( (($_SERVER['REQUEST_METHOD'] == 'POST') && isset($_POST['submit'])) || $andr
           // $stmt = $con->prepare('INSERT INTO person(name, country) VALUES(:name, :country)');
     $stmt = $con->prepare("UPDATE recipe SET title='{$title}', condiment0={$condiment0}, condiment1={$condiment1} WHERE id={$id}");
 
-          if($stmt->execute()) {
-              $successMSG = "성공!";
-          }
-          else {
-              $errMSG = "레시피 업데이트 에러";
-          }
-      } catch(PDOException $e) {
-          die("Database error: " . $e->getMessage());
-      }
+        if($stmt->execute()) {
+            $successMSG = "성공!";
+        }
+        else {
+            $errMSG = "레시피 업데이트 에러";
+        }
+    } catch(PDOException $e) {
+        die("Database error: " . $e->getMessage());
+    }
 }else echo 'fail';
 
 ?>
