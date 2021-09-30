@@ -10,7 +10,9 @@
 
 * 🏅 2020 교내 Deep Change 인하공대 Start-up Challenge 최우수상
 
+  
 
+  <br>
 
 ### 요약
 
@@ -18,9 +20,15 @@
 * 사용자가 자주 사용하는 레시피를 모바일 앱에 저장
 * 앱에서 레시피를 실행하면 조미료통은 지정된 수치만큼 조미료를 분출
 
+  
 
+  
 
+  <br>
 
+  <br>
+
+  
 
 ## About Project
 
@@ -33,7 +41,9 @@
 * 조미료가 직접 닿는 부분을 분리하여 위생적인 관리
 * 영점을 맞추는 스위치로 개인 그릇의 사용을 가능하게 함
 
+  
 
+  <br>
 
 ### Android App
 
@@ -43,7 +53,9 @@
 * '레시피 실행'과 '바로 실행' 기능 구현
 * 실행할 조미료를 서버에 request
 
+  
 
+  <br>
 
 ### BE
 
@@ -53,9 +65,13 @@
 * MySQL 사용자 DB 생성
 * 사용자가 실행한 조미료 데이터를 조미료통의 NodeMCU에게 json으로 전송
 
+  
 
+  
 
+  <br>
 
+  <br>
 
 ## Results
 
@@ -65,7 +81,7 @@
 
 <img src=images/machine1.png  width="30%"/><img src=images/machine2.png  width="30%"/>
 
-
+  
 
 - Circuit
 
@@ -75,19 +91,23 @@
 
 
 
+  <br>
 
+  
 
 ### App
 
-| 기능             | 화면                                               |
-| ---------------- | -------------------------------------------------- |
-| 초기화면         | <img src=images/android_list.png  width="50%"/>    |
-| 조미료 실행 명령 | <img src=images/android_execute.png  width="50%"/> |
-| 레시피 추가      | <img src=images/android_add.png  width="50%"/>     |
+|       기능       |                        화면                        |
+| :--------------: | :------------------------------------------------: |
+|     초기화면     |  <img src=images/android_list.png  width="30%"/>   |
+| 조미료 실행 명령 | <img src=images/android_execute.png  width="30%"/> |
+|   레시피 추가    |   <img src=images/android_add.png  width="30%"/>   |
 
+  
 
+  <br>
 
-
+  <br>
 
 ***
 
