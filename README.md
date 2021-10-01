@@ -1,4 +1,4 @@
-# 스마트 조미료 추출기 ( SSM; Smart Spice Machine )
+# 스마트 조미료 추출기 (SSM; Smart Spice Machine)
 
 
 
@@ -6,7 +6,7 @@
 
 > 2020.03. - 2020.10.
 
-### Awards
+### Contests
 
 * 🏅 2020 교내 Deep Change 인하공대 Start-up Challenge 최우수상
 
@@ -14,7 +14,7 @@
 
   <br>
 
-### 요약
+### Summary
 
 * 요리 초보가 계량을 쉽게 할 수 있도록 기획
 * 사용자가 자주 사용하는 레시피를 모바일 앱에 저장
@@ -59,7 +59,7 @@
 
 ### BE
 
-<img src="https://img.shields.io/badge/Language-PHP-green?style=flat"/><img src="https://img.shields.io/badge/Platform-Arduino-blue?style=flat"/><img src="https://img.shields.io/badge/DB-MySQL-yellow?style=flat"/>
+<img src="https://img.shields.io/badge/Language-PHP-green?style=flat"/><img src="https://img.shields.io/badge/Platform-AWS-blue?style=flat"/><img src="https://img.shields.io/badge/DB-MySQL-yellow?style=flat"/>
 
 * AWS free tier 사용
 * MySQL 사용자 DB 생성
